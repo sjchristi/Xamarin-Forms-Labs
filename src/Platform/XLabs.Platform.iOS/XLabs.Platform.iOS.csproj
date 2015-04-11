@@ -40,19 +40,19 @@
     <DocumentationFile>..\..\..\build\XLabs.Platform.iOS.XML</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="..\XLabs.Platform\device\Accelerometer.designer.cs">
+    <Compile Include="..\XLabs.Platform\Device\Accelerometer.designer.cs">
       <Link>Device\Accelerometer.designer.cs</Link>
-      <DependentUpon>..\Device\Accelerometer.cs</DependentUpon>
+      <DependentUpon>Accelerometer.cs</DependentUpon>
     </Compile>
-    <Compile Include="..\XLabs.Platform\device\Battery.designer.cs">
+    <Compile Include="..\XLabs.Platform\Device\Battery.designer.cs">
       <Link>Device\Battery.designer.cs</Link>
-      <DependentUpon>..\Device\Battery.cs</DependentUpon>
+      <DependentUpon>Battery.cs</DependentUpon>
     </Compile>
-    <Compile Include="..\XLabs.Platform\device\Gyroscope.designer.cs">
+    <Compile Include="..\XLabs.Platform\Device\Gyroscope.designer.cs">
       <Link>Device\Gyroscope.designer.cs</Link>
-      <DependentUpon>..\Device\Gyroscope.cs</DependentUpon>
+      <DependentUpon>Gyroscope.cs</DependentUpon>
     </Compile>
-    <Compile Include="..\XLabs.Platform\services\io\FileManager.cs">
+    <Compile Include="..\XLabs.Platform\Services\IO\FileManager.cs">
       <Link>Services\IO\FileManager.cs</Link>
     </Compile>
     <Compile Include="Device\Accelerometer.cs" />
@@ -106,12 +106,5 @@
     <Reference Include="System.Core" />
     <Reference Include="Xamarin.iOS" />
   </ItemGroup>
-  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
-  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
-    <PropertyGroup>
-      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
-    </PropertyGroup>
-    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
-  </Target>
 </Project>
