@@ -46,7 +46,7 @@ namespace XLabs.Forms.Controls
 			if (extendedCell.DetailLocation == TextCellDetailLocation.Right)
 				style = UITableViewCellStyle.Value1;
 
-			string fullName = item.GetType ().FullName;
+			string fullName = item.GetType ().FullName + "_" + style.ToString();
 			CellTableViewCell cell = tv.DequeueReusableCell (fullName) as CellTableViewCell;
 			if (cell == null) {
 				cell = new CellTableViewCell (style, fullName);
